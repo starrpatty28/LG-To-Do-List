@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="/stylesheets/main.css"/>
   <title>
     To Do List
   </title>
 </head>
-<body background="../notebook.jpg">
+<body>
+  <div class="rug">
   <h1>To Do List</h1>
-  <input type="text">
-    <button type="button">Add Task</button>
+  <form method="POST" action="/api/todo">
+  <input type="text" placeholder="Add Task">
+    <button type="button">Add</button>
+    </form>
     <br/>
     <br/>
     <% for( let i = 0; i < todos.length; i++ ) { %>
@@ -16,5 +20,6 @@
     <%= todos[ i ].task %>
     <br/>
   <% } %>
+</div>
 </body>
 </html>
