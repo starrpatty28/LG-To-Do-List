@@ -1,0 +1,13 @@
+body {
+  /*background-color: blue;*/
+    background-image: url("/images/space-wallpaper36.jpg");
+}
+
+.rug {
+  position: relative;
+  z-index: 100;
+  padding: 20px;
+  background: rgb(255,241,220);
+  background: rgba(255,241,220,0.75);
+  text-align: inherit;
+}
