@@ -1,0 +1,28 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "Javascript To-Do-List Web App # To Do List ## Description",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "babel-node": "babel-node --presets=/*a*/ --ignore='foo|bar|baz'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starrpatty28/LG-To-Do-List.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/starrpatty28/LG-To-Do-List/issues"
+  },
+  "homepage": "https://github.com/starrpatty28/LG-To-Do-List#readme",
+  "dependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-latest": "^6.16.0",
+    "express": "^4.14.0",
+    "path": "^0.12.7",
+    "pg-promise": "^5.5.0"
+  }
+}
