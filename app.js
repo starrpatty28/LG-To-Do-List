@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 var pg = require('pg')
 var pgp = require('pg-promise')();
 
-var conString = "pg://melissamorel@localhost:5432/todo4";
-var client = new pg.Client(conString);
-client.connect();
+// /*var conString = "pg://melissamorel@localhost:5432/todo4";
+// var client = new pg.Client(conString);
+// client.connect();*/
 
 var index = require('./routes/index');
 var users = require('./routes/users');
