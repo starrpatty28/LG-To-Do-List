@@ -15,10 +15,9 @@ router.get('/', function(req, res, next) {
 })
 
 router.post('/api/todo', (req, res, next) => {
-  console.log("this is body", req.body)
+  console.log("this is the body:", req.body)
   const results = [];
-  const data = {text: req.body.text};
-  db.addItems(data.text).then(() => res.redirect('/'))
+  db.addItems(req.body.addTask).then(() => res.redirect('/'))
 })
 
 module.exports = router
