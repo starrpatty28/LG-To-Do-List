@@ -1,5 +1,8 @@
 const pgp = require('pg-promise')()
-const CONNECTION_STRING = "pg://melissamorel@localhost:5432/todo4"
+const CONNECTION_STRING = process.env.NODE_ENV === 'production'
+  ? process.env.DATABASE_URL
+  : "pg://melissamorel@localhost:5432/todo4"
+
 const db = pgp( CONNECTION_STRING )
 
 const getListos = () =>
