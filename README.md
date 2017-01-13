@@ -25,12 +25,12 @@ The App: As a user...
 - [x] I can edit the text on existing to do's.
 ## Additional Specs:
 - [X] Create the back end using node and express.
-- [ ] Deploy the app to heroku.  
+- [x] Deploy the app to heroku.  
 - [X] Create a database of to do list items.
 - [X] Follow good Git team behaviors (do all your work on branches & submit pull requests for review before merging to master)
 - [X] The artifact produced is properly licensed, preferably with the [MIT license](https://opensource.org/licenses/MIT).
 ## Stretch Goals/Nice to Have's:
-- [ ] Write the app using ES6 and deploy using babel.
+- [x] Write the app using ES6 and deploy using babel.
 - [ ] I can create mulitple lists of to do's.
 - [ ] I can log into my account.
 
