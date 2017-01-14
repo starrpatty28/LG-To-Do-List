@@ -11,6 +11,9 @@ const getListos = () =>
 const addItems = task =>
   db.oneOrNone( "INSERT INTO items (task) VALUES ($1)", [task]);
 
+const login = user =>
+  db.oneOrNone("INSERT INTO users (user) VALUES ($1)", [user]);
+
 const removeItems = ids =>
   db.manyOrNone( "DELETE FROM items WHERE id IN ($1:csv)", [ids]);
 
@@ -20,4 +23,4 @@ const editTask = (newTask, id) =>
 const updateCompletion = (id, completed) =>
   db.none( "UPDATE items SET complete=$2 WHERE id=$1", [ id, completed ])
 
-module.exports = { getListos, addItems, removeItems, editTask, updateCompletion, 'url':CONNECTION_STRING }
+module.exports = { getListos, addItems, removeItems, editTask, updateCompletion, 'url':'pg://noi-ariellabahtisrael@localhost:5432/todo4' }

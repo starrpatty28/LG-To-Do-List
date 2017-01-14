@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var path = require('path')
 
+const db = require('../config/database')
+
 /* GET users listing. */
 router.get('/', function(request, response) {
   response.send('respond with a responseource');
@@ -16,11 +18,11 @@ router.get('/', function(request, response) {
 });
 
 router.get('/login', function(request, response) {
-  response.render('login.ejs');
+  response.render('login.ejs', {message:'loginMessage'});
 });
 
 // process the login form
-// router.post('/login', do all your passport )
+ router.post('/login')
 
 router.get('/profile', isLoggedIn, function(request, response) {
   response.render('profile.ejs', {
