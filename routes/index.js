@@ -2,7 +2,7 @@ var express = require('express')
 var router = express.Router()
 var path = require('path')
 
-const db = require('../database')
+const db = require('../config/database')
 
 router.get('/', function(req, res, next) {
   //setting title variable

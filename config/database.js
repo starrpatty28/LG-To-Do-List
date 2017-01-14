@@ -1,7 +1,7 @@
 const pgp = require('pg-promise')()
 const CONNECTION_STRING = process.env.NODE_ENV === 'production'
   ? process.env.DATABASE_URL
-  : "pg://noi-ariellaisrael@localhost:5432/todo4"
+  : "pg://noi-ariellabahtisrael@localhost:5432/todo4"
 
 const db = pgp( CONNECTION_STRING )
 
@@ -20,4 +20,4 @@ const editTask = (newTask, id) =>
 const updateCompletion = (id, completed) =>
   db.none( "UPDATE items SET complete=$2 WHERE id=$1", [ id, completed ])
 
-module.exports = { getListos, addItems, removeItems, editTask, updateCompletion }
+module.exports = { getListos, addItems, removeItems, editTask, updateCompletion, 'url':CONNECTION_STRING }

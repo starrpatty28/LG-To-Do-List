@@ -6,6 +6,12 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var pg = require('pg')
 var pgp = require('pg-promise')();
+var port = process.env.PORT || 8080;
+var passport = require('passport');
+var morgan = require('morgan');
+var session = require('express-session');
+
+var configDB = require('./config/database');
 
 // /*var conString = "pg://melissamorel@localhost:5432/todo4";
 // var client = new pg.Client(conString);
@@ -15,6 +21,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+// require('/config/passport')(passport); //pass passport for configuration
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -27,8 +35,19 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+//set up the express application
+app.use(morgan('dev'));
 app.use(cookieParser());
+//app.use(bodyParcer());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//required for passport
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); //session secet
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.listen(port);
+console.log('The magic happens on port ' + port);
 
 app.use('/', index);
 app.use('/users', users);
@@ -52,3 +71,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+//require('./app.js')(app, passport);
