@@ -6,7 +6,7 @@ const db = require('../database')
 
 router.get('/', function(req, res, next) {
   //setting title variable
-  db.getListos()
+  db.getItems()
     .then(todos => {
       res.render('index', {
         todos
@@ -18,11 +18,9 @@ router.post('/api/todo', function(req, res) {
     const {
         item
     } = req.body
-    console.log('Item: ', item);
-    console.log('Item: ', req.body);
     if (item.length === 0) {
       console.log("cannot be blank")
-        db.getListos().then(item => {res.redirect('/')
+        db.getItems().then(item => {res.redirect('/')
       })
     } else {
         db.addItems(item).then(() => res.redirect('/'))
@@ -30,7 +28,7 @@ router.post('/api/todo', function(req, res) {
 })
 
 router.post('/api/todo/delete', function(request, response) {
-    console.log("deleting")
+
     db.removeItems(request.body.todos)
     response.redirect('/')
 })
